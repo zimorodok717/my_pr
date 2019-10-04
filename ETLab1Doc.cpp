@@ -7,16 +7,6 @@ void CETLab1Doc::InitializeSearchContent()
 	// Задание содержимого поиска из данных документа.
 	// Части содержимого должны разделяться точкой с запятой ";"
 
-	// Например:  strSearchContent = _T("точка;прямоугольник;круг;объект ole;");
-	SetSearchContent(strSearchContent);
-}
-
-void CETLab1Doc::SetSearchContent(const CString& value)
-{
-	if (value.IsEmpty())
-	{
-		RemoveChunk(PKEY_Search_Contents.fmtid, PKEY_Search_Contents.pid);
-	}
 	else
 	{
 		CMFCFilterChunkValueImpl *pChunk = nullptr;
