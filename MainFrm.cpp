@@ -1,36 +1,6 @@
 ﻿
 // MainFrm.cpp: реализация класса CMainFrame
-//
 
-#include "stdafx.h"
-#include "ETLab1.h"
-
-#include "MainFrm.h"
-
-#ifdef _DEBUG
-#define new DEBUG_NEW
-#endif
-
-// CMainFrame
-
-IMPLEMENT_DYNCREATE(CMainFrame, CFrameWndEx)
-
-const int  iMaxUserToolbars = 10;
-const UINT uiFirstUserToolBarId = AFX_IDW_CONTROLBAR_FIRST + 40;
-const UINT uiLastUserToolBarId = uiFirstUserToolBarId + iMaxUserToolbars - 1;
-
-BEGIN_MESSAGE_MAP(CMainFrame, CFrameWndEx)
-	ON_WM_CREATE()
-	ON_COMMAND(ID_VIEW_CUSTOMIZE, &CMainFrame::OnViewCustomize)
-	ON_REGISTERED_MESSAGE(AFX_WM_CREATETOOLBAR, &CMainFrame::OnToolbarCreateNew)
-	ON_COMMAND_RANGE(ID_VIEW_APPLOOK_WIN_2000, ID_VIEW_APPLOOK_WINDOWS_7, &CMainFrame::OnApplicationLook)
-	ON_UPDATE_COMMAND_UI_RANGE(ID_VIEW_APPLOOK_WIN_2000, ID_VIEW_APPLOOK_WINDOWS_7, &CMainFrame::OnUpdateApplicationLook)
-	ON_WM_SETTINGCHANGE()
-END_MESSAGE_MAP()
-
-static UINT indicators[] =
-{
-	ID_SEPARATOR,           // индикатор строки состояния
 	ID_INDICATOR_CAPS,
 	ID_INDICATOR_NUM,
 	ID_INDICATOR_SCRL,
