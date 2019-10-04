@@ -1,29 +1,7 @@
 ﻿
 // MainFrm.cpp: реализация класса CMainFrame
 
-	ID_INDICATOR_CAPS,
-	ID_INDICATOR_NUM,
-	ID_INDICATOR_SCRL,
-};
-
-// Создание или уничтожение CMainFrame
-
-CMainFrame::CMainFrame() noexcept
-{
-	// TODO: добавьте код инициализации члена
-	theApp.m_nAppLook = theApp.GetInt(_T("ApplicationLook"), ID_VIEW_APPLOOK_VS_2008);
-}
-
-CMainFrame::~CMainFrame()
-{
-}
-
-int CMainFrame::OnCreate(LPCREATESTRUCT lpCreateStruct)
-{
-	if (CFrameWndEx::OnCreate(lpCreateStruct) == -1)
-		return -1;
-
-	BOOL bNameValid;
+	ID
 
 	if (!m_wndMenuBar.Create(this))
 	{
