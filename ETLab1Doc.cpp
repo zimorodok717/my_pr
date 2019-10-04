@@ -1,32 +1,4 @@
 ﻿
-	{
-		// TODO: добавьте код загрузки
-		m_LineArray.Serialize(ar);
-	}
-}
-
-#ifdef SHARED_HANDLERS
-
-// Поддержка для эскизов
-void CETLab1Doc::OnDrawThumbnail(CDC& dc, LPRECT lprcBounds)
-{
-	// Измените этот код для отображения данных документа
-	dc.FillSolidRect(lprcBounds, RGB(255, 255, 255));
-
-	CString strText = _T("TODO: implement thumbnail drawing here");
-	LOGFONT lf;
-
-	CFont* pDefaultGUIFont = CFont::FromHandle((HFONT) GetStockObject(DEFAULT_GUI_FONT));
-	pDefaultGUIFont->GetLogFont(&lf);
-	lf.lfHeight = 36;
-
-	CFont fontDraw;
-	fontDraw.CreateFontIndirect(&lf);
-
-	CFont* pOldFont = dc.SelectObject(&fontDraw);
-	dc.DrawText(strText, lprcBounds, DT_CENTER | DT_WORDBREAK);
-	dc.SelectObject(pOldFont);
-}
 
 // Поддержка обработчиков поиска
 void CETLab1Doc::InitializeSearchContent()
